@@ -7,4 +7,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel = "myPages", path = "myPages")
 public interface MyPageRepository
-    extends PagingAndSortingRepository<MyPage, Long> {}
+    extends PagingAndSortingRepository<MyPage, Long> {
+
+        Optional<MyPage> findByOrderId(Long orderId);
+    }
